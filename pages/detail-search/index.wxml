@@ -1,0 +1,31 @@
+<!--pages/detail-search/index.wxml-->
+<van-search class="search" value="{{Searching}}" background="#fafafa" shape="round" bind:change="inputing" bind:search="onSearch">
+</van-search>
+<!-- 热门搜索 -->
+<view class="hot-recommend" wx:if="{{info.length==0&&!SearchResult.length}}">
+  <header title="热门搜索" class="header"></header>
+  <view class="hots">
+    <view wx:key="index" wx:for="{{hots}}" class="hot-item" bindtap="hotsItemClick" data-value="{{item}}">
+      {{item.first}}
+    </view>
+  </view>
+</view>
+<!-- 搜索建议 -->
+<view  wx:if="{{info.length&&!SearchResult.length}}">
+  <view class="searchRecommendTitle">搜索"{{value}}"</view>
+  <view wx:for="{{NODE}}" wx:key="index" class="searchRecommend">
+    <view class="searchRecommendItem">
+      <image src="/assets/images/icons/search_icon.png" class="img" mode="widthFix"></image>
+      <rich-text nodes="{{NODE[index]}}"></rich-text>
+    </view>
+  </view>
+</view>
+
+
+<!--歌曲列表展示  -->
+<view wx:if="{{SearchResult.length}}">
+  <header title="搜索结果" class="green"></header>
+  <view>
+  <song-list-item wx:for="{{SearchResult}}" wx:key="index" info="{{item}}" indey="{{index}}"></song-list-item>
+  </view>
+</view>

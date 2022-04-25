@@ -1,0 +1,31 @@
+<!--pages/home-music/index.wxml-->
+<van-search bind:click-input="searchClick" disabled placeholder="搜索您喜欢的音乐" background="#fafafa" shape="round" />
+<swiper class="swiper" indicator-dots autoplay circular>
+  <block wx:for="{{banners}}" wx:key="index">
+    <swiper-item class="swiper-item">
+      <image src="{{item.pic}}" class="img" mode="widthFix" bindload="ImageLoaded"></image>
+    </swiper-item>
+  </block>
+</swiper>
+<view class="recommend">
+  <header title="推荐歌曲" asideText="更多>" bind:click="headerClick"></header>
+  <view class="songList">
+    <block wx:for="{{recommend}}" wx:key="index">
+      <songList songs="{{item}}"></songList>
+    </block>
+  </view>
+</view>
+<songMenu title="热门歌单" 
+                songMenu="{{hotSongMenu}}"
+                wx:if="{{hotSongMenu.length > 0}}">
+</songMenu>
+
+
+<view class="ranking">
+  <header title="巅峰榜"></header>
+  <view class="ranking-list">
+    <block wx:for="{{rankings}}" wx:key="name">
+      <songRank item="{{item}}" bindtap="rankClick" data-idd="{{index}}"></songRank>
+    </block>
+  </view>
+</view>

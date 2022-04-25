@@ -1,0 +1,33 @@
+/* pages/detail-search/index.wxss */
+.hots{
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 26rpx;
+}
+.hot-recommend{
+  margin-top:10rpx;
+  padding:0 10rpx
+}
+.hot-item{
+  background-color: white;
+  margin:10rpx 20rpx
+}
+.hots .hot-item:first-of-type {
+  color: #26ce8a;
+}
+.img{
+  width: 60rpx;
+}
+.searchRecommendTitle{
+  color: #26ce8a;
+  font-size: 34rpx;
+  font-weight: 700;
+}
+.searchRecommendItem{
+  display: flex;
+  align-items: center;
+  margin-top:10rpx;
+}
+.green{
+  color: #26ce8a;
+}

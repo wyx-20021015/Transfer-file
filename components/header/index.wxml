@@ -1,0 +1,14 @@
+<!--components/header/index.wxml-->
+<view class="header">
+  <view class="title">
+    {{title}}
+  </view>
+  <view bindtap="clickHeader">
+    <view class="slot">
+      <slot></slot>
+    </view>
+    <view class="aside">
+      {{asideText}}
+    </view>
+  </view>
+</view>

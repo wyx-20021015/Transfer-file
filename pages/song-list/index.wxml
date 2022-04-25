@@ -1,0 +1,12 @@
+<!--pages/song-list/index.wxml-->
+<header title="{{songInfo.name}}" wx:if="{{rankName.length>0}}"></header>
+<view class="header">
+<!-- 背景 -->
+  <image wx:if="{{!songInfo.name}}" class="bg-image" mode="aspectFill" src="{{songInfo.coverImgUrl}}"></image>
+  <view class="cover"></view>
+<!-- 内容 -->
+  <view class="content">
+  </view>
+</view>
+<song-list-item wx:for="{{songInfo.tracks}}" wx:key="index" info="{{item}}" indey="{{index}}">
+</song-list-item>
